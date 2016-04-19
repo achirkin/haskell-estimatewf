@@ -1,0 +1,63 @@
+name: haskell-estimatewf
+version: 0.0.1
+cabal-version: 1.22
+build-type: Simple
+license: MIT
+license-file: LICENSE
+copyright: (c) Artem Chirkin
+maintainer: Artem Chirkin <chirkin@arch.ethz.ch>
+stability: experimental
+homepage: http://ia.arch.ethz.ch/achirkin
+bug-reports: mailto:chirkin@arch.ethz.ch
+synopsis: The code for my MSc graduate project and an early haskell work: dirty and, probably, slow.
+author: Artem Chirkin
+
+library
+    exposed-modules:
+        Workflow
+        Workflow.Toolset
+    build-depends:
+        QuickCheck -any,
+        base -any,
+        doctest -any,
+        array -any,
+        containers -any,
+        aeson -any,
+        vector -any
+    default-language: Haskell2010
+    hs-source-dirs: src
+    ghc-options: -Wall -ferror-spans
+
+executable haskell-estimatewf
+    main-is: Main.hs
+    build-depends:
+        QuickCheck -any,
+        base -any,
+        doctest -any,
+        array -any,
+        containers -any,
+        aeson -any,
+        vector -any,
+        bytestring -any
+    default-language: Haskell2010
+    hs-source-dirs: src
+    ghc-options: -Wall -ferror-spans
+
+test-suite test-haskell-estimatewf
+    type: exitcode-stdio-1.0
+    main-is: runtests.hs
+    build-depends:
+        QuickCheck -any,
+        base -any,
+        doctest -any,
+        array -any,
+        containers -any,
+        bytestring -any,
+        random -any,
+        haskell-estimatewf -any
+    default-language: Haskell2010
+    hs-source-dirs: test
+    other-modules:
+        Test.Toolset
+        Test.WorkflowTest
+    ghc-options: -Wall -ferror-spans

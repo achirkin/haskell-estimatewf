@@ -1,0 +1,27 @@
+# haskell
+*.o
+*.hi
+*.summary
+dist/
+
+# leksah
+*.lkshw
+*.lkshf
+*.lkshs
+
+# cabal
+.cabal-sandbox/
+cabal.sandbox.config
+cabal.config
+
+# app-specific
+*.sqlite
+*-shm
+*-wal
+*.aes
+*.keter
+
+# stack
+.stack-work
+
+*.csv
